@@ -1,9 +1,8 @@
 {
-  "name": "print-vue",
-  "version": "1.5.0",
+  "name": "electron-vue",
+  "version": "1.0.0",
   "author": "jiangliyue <772748611@qq.com>",
   "description": "An electron-vue project",
-  "license": null,
   "main": "./dist/electron/main.js",
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",
@@ -17,15 +16,15 @@
     "postinstall": ""
   },
   "build": {
-    "productName": "顾家移动打印客户端",
-    "appId": "com.example.kuka-printer",
+    "productName": "electron-vue",
+    "appId": "com.example.electron-vue",
     "directories": {
       "output": "build"
     },
     "publish": [
       {
         "provider": "generic",
-        "url": "https://kuka-iretail.oss-cn-hangzhou.aliyuncs.com/printerApp/"
+        "url": "yourService"
       }
     ],
     "asar": false,
@@ -54,14 +53,12 @@
       "icon": "static/icons/icon.ico"
     },
     "linux": {
-      "icon": "static/icons"
+      "icon": "static/icons/icon.ico"
     }
   },
   "dependencies": {
     "axios": "^0.18.0",
     "electron-updater": "^4.3.5",
-    "goeasy": "^1.1.1",
-    "path": "^0.12.7",
     "vue": "^2.5.16",
     "vue-electron": "^1.0.6",
     "vue-router": "^3.0.1",
@@ -90,7 +87,6 @@
     "electron-debug": "^1.5.0",
     "electron-devtools-installer": "^2.2.4",
     "file-loader": "^1.1.11",
-    "goeasy": "^1.1.1",
     "html-webpack-plugin": "^3.2.0",
     "less": "^4.1.0",
     "less-loader": "^7.2.1",
