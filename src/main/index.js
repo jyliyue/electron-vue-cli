@@ -1,6 +1,4 @@
-import { app, BrowserWindow, ipcMain, dialog} from 'electron'
-import printer from './utils/printer/index'
-import setting from './utils/setting/index'
+import { app, BrowserWindow, ipcMain, dialog } from 'electron'
 import electron from 'electron'
 /**
  * Set `__static` path to static files in production
@@ -103,12 +101,7 @@ function createWindow () {
   // 设置更新
   setting.initUpdate(app, mainWindow)
 }
-// =========================================================
-// 限制只可以打开一个应用
-// const isSecondInstance = setting.onlyOppen(app, mainWindow)
-// if (isSecondInstance) {
-//   app.quit()
-// }
+
 const gotTheLock = app.requestSingleInstanceLock()
 if (!gotTheLock) {
   app.quit()
