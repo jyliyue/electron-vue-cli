@@ -130,8 +130,4 @@ app.on('activate', () => {
   }
 })
 
-// 开机自动启动
-// setting.autoOpen(app)
-
-
 initSys(app)
