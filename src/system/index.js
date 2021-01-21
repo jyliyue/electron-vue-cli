@@ -1,10 +1,10 @@
-import config from '@/config/index'
+import config from '../config/index'
 import initAutoOpen from './initAutoOpen'
 import initAutoUpdate from './initAutoUpdate'
 
-function initSys() {
+function initSys(app) {
     if (config.isAutoOpen) {
-        initAutoOpen()
+        initAutoOpen(app)
     }
     if (config.isAutoUpdate) {
         initAutoUpdate()
