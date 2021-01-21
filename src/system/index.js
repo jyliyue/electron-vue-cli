@@ -2,8 +2,9 @@ import config from '../config/index'
 import initAutoOpen from './initAutoOpen'
 import initAutoUpdate from './initAutoUpdate'
 import initOnlyOpen from './initOnlyOpen'
+import initUseTray from './initUseTray'
 
-function initSys(app) {
+function initSys(app, mainWindow) {
     if (config.isAutoOpen) {
         initAutoOpen(app)
     }
@@ -11,7 +12,10 @@ function initSys(app) {
         initAutoUpdate()
     }
     if (config.isOnlyOpen) {
-        initOnlyOpen()
+        initOnlyOpen(app, mainWindow)
+    }
+    if (config.isUseTray) {
+        initUseTray(app, mainWindow)
     }
 }
 

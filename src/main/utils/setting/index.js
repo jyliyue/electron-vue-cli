@@ -14,18 +14,6 @@ const setting = {
             }
         })
     },
-    // 开机自启
-    autoOpen: function(app) {
-        const exeName = path.basename(process.execPath)
-        app.setLoginItemSettings({
-            openAtLogin: true,
-            openAsHidden: false,
-            path: process.execPath,
-            args: [
-                '--processStart', `"${exeName}"`,
-            ]
-        })
-    },
     // 托盘最小化
     initTray: function(app, mainWindow) {
         // 用一个 Tray 来表示一个图标,这个图标处于正在运行的系统的通知区 ，通常被添加到一个 context menu 上.
