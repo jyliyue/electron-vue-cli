@@ -81,16 +81,16 @@ function createWindow () {
 
   // mainWindow.webContents.closeDevTools()
 
-  mainWindow.on('close', (e) => {
-    e.preventDefault();		//阻止默认行为，一定要有
-    mainWindow.hide()
-		if(mainWindow.isMinimized()){
-			mainWindow = null;
-		}else{
-			e.preventDefault();
-			mainWindow.minimize();
-		}
-  })
+  // mainWindow.on('close', (e) => {
+  //   e.preventDefault();		//阻止默认行为，一定要有
+  //   mainWindow.hide()
+	// 	if(mainWindow.isMinimized()){
+	// 		mainWindow = null;
+	// 	}else{
+	// 		e.preventDefault();
+	// 		mainWindow.minimize();
+	// 	}
+  // })
 
 
   // 监听打印事件
@@ -99,31 +99,31 @@ function createWindow () {
     printer.downloadFile(orderForm.pdfUrl, orderForm.fileName)
   })
   // 设置更新
-  setting.initUpdate(app, mainWindow)
+  // setting.initUpdate(app, mainWindow)
 }
 
-const gotTheLock = app.requestSingleInstanceLock()
-if (!gotTheLock) {
-  app.quit()
-} else {
-  app.on('second-instance', (event, commandLine, workingDirectory) => {
-    // 当运行第二个实例时,将会聚焦到mainWindow这个窗口
-    if (mainWindow) {
-      if (mainWindow.isMinimized()) mainWindow.restore()
-      mainWindow.focus()
-      mainWindow.show()
-    }
-  })
-}
+// const gotTheLock = app.requestSingleInstanceLock()
+// if (!gotTheLock) {
+//   app.quit()
+// } else {
+//   app.on('second-instance', (event, commandLine, workingDirectory) => {
+//     // 当运行第二个实例时,将会聚焦到mainWindow这个窗口
+//     if (mainWindow) {
+//       if (mainWindow.isMinimized()) mainWindow.restore()
+//       mainWindow.focus()
+//       mainWindow.show()
+//     }
+//   })
+// }
 
 
 app.on('ready', createWindow)
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
-})
+// app.on('window-all-closed', () => {
+//   if (process.platform !== 'darwin') {
+//     app.quit()
+//   }
+// })
 
 app.on('activate', () => {
   if (mainWindow === null) {
@@ -132,6 +132,6 @@ app.on('activate', () => {
 })
 
 // 开机自动启动
-setting.autoOpen(app)
+// setting.autoOpen(app)
 
 
