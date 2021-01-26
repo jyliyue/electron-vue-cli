@@ -77,19 +77,6 @@ function createWindow () {
       mainWindow.show();
   })
 
-  // mainWindow.webContents.closeDevTools()
-
-  // mainWindow.on('close', (e) => {
-  //   e.preventDefault();		//阻止默认行为，一定要有
-  //   mainWindow.hide()
-	// 	if(mainWindow.isMinimized()){
-	// 		mainWindow = null;
-	// 	}else{
-	// 		e.preventDefault();
-	// 		mainWindow.minimize();
-	// 	}
-  // })
-
   // 设置更新
   // setting.initUpdate(app, mainWindow)
 }
