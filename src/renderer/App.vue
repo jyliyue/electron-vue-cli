@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'print-vue'
+    name: 'app'
   }
 </script>
 
