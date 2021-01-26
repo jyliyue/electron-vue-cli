@@ -10,7 +10,11 @@ function initSys(app, mainWindow) {
         initAutoOpen(app)
     }
     if (config.isAutoUpdate) {
-        initAutoUpdate()
+        if (!config.updateUrl) {
+            console.log('Please set updateUrl right!')
+        } else {
+            initAutoUpdate(app, mainWindow, config.updateUrl)
+        }
     }
     if (config.isOnlyOpen) {
         initOnlyOpen(app, mainWindow)
