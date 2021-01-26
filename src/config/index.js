@@ -1,5 +1,5 @@
 const config = {
-    updateUrl: '', // 检测更新地址
+    updateUrl: 'http://116.85.5.71:8080/', // 检测更新地址
     isAutoOpen: true, // 开机自启
     isAutoUpdate: true, // 自动更新
     isOnlyOpen: true, // 窗口唯一

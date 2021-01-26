@@ -1,7 +1,9 @@
 import { autoUpdater } from "electron-updater"
-import { ipcMain, dialog } from 'electron'
+import { ipcMain } from 'electron'
 
 function initAutoUpdate(app, mainWindow, updateUrl) {
+    // 设置更新地址
+    autoUpdater.setFeedURL(updateUrl)
     // 通过main进程发送事件给renderer进程，提示更新信息
     function sendUpdateMessage(text) {
         mainWindow.webContents.send('message', text)
@@ -13,8 +15,6 @@ function initAutoUpdate(app, mainWindow, updateUrl) {
         updateAva: { status: 1, msg: '检测到新版本，正在下载,请稍后' },
         updateNotAva: { status: -2, msg: '您现在使用的版本为最新版本,无需更新!' },
     }
-    // 设置更新地址
-    autoUpdater.setFeedURL(updateUrl)
     // 更新错误
     autoUpdater.on('error', function (error) {
         sendUpdateMessage(error)
