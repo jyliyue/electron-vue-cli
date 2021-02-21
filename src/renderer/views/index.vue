@@ -1,6 +1,9 @@
 <template>
   <div id="wrapper">
     <main>
+      <div class="container">
+        <img src="../assets/logo.png" alt="">
+      </div>
       <update-handle :show.sync="showUpdate" :percent="percent"></update-handle>
     </main>
   </div>
@@ -36,5 +39,14 @@
 </script>
 
 <style lang="less" scoped>
-
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    height: 150px;
+  }
+}
 </style>
