@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "author": "jiangliyue <772748611@qq.com>",
   "description": "An electron-vue project",
+  "license": null,
   "main": "./dist/electron/main.js",
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",
@@ -24,7 +25,7 @@
     "publish": [
       {
         "provider": "generic",
-        "url": "yourService"
+        "url": "https://kuka-iretail.oss-cn-hangzhou.aliyuncs.com/printerApp/"
       }
     ],
     "asar": false,
@@ -50,7 +51,15 @@
       "icon": "static/icons/icon.icns"
     },
     "win": {
-      "icon": "static/icons/icon.ico"
+      "icon": "static/icons/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "ia32"
+          ]
+        }
+      ]
     },
     "linux": {
       "icon": "static/icons/icon.ico"
@@ -83,7 +92,7 @@
     "del": "^3.0.0",
     "devtron": "^1.4.0",
     "electron": "^4.0.1",
-    "electron-builder": "^22.7.0",
+    "electron-builder": "^20.19.2",
     "electron-debug": "^1.5.0",
     "electron-devtools-installer": "^2.2.4",
     "file-loader": "^1.1.11",
