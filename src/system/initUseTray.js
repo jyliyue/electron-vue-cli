@@ -1,5 +1,6 @@
 import { dialog } from 'electron'
 import electron from 'electron'
+import config from '../config/index'
 // 用一个 Tray 来表示一个图标,这个图标处于正在运行的系统的通知区 ，通常被添加到一个 context menu 上.
 const Menu = electron.Menu;
 const Tray = electron.Tray;
@@ -42,7 +43,7 @@ function initUseTray(app, mainWindow) {
     //图标的上下文菜单
     const contextMenu = Menu.buildFromTemplate(trayMenuTemplate)
     //设置此托盘图标的悬停提示内容
-    appTray.setToolTip('顾家移动打印客户端')
+    appTray.setToolTip(config.appName)
     //设置此图标的上下文菜单
     appTray.setContextMenu(contextMenu)
     //单击右下角小图标显示应用

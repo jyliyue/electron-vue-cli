@@ -1,4 +1,5 @@
 const config = {
+    appName: 'electron-vue', // 鼠标悬停显示
     isAutoOpen: true, // 开机自启
     isOnlyOpen: true, // 窗口唯一
     isUseTray: true, // 使用托盘
