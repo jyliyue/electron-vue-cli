@@ -1,7 +1,9 @@
 import { app, BrowserWindow, ipcMain, dialog } from 'electron'
-import electron from 'electron'
 import initSys from '../system/index.js'
-
+/* 需要调试插件在此处引入 */
+if (process.env.NODE_ENV !== 'development') {
+  global.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
+}
 // // 用一个 Tray 来表示一个图标,这个图标处于正在运行的系统的通知区 ，通常被添加到一个 context menu 上.
 // const Menu = electron.Menu;
 // const Tray = electron.Tray;
