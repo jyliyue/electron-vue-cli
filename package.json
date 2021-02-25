@@ -25,7 +25,7 @@
     "publish": [
       {
         "provider": "generic",
-        "url": "https://kuka-iretail.oss-cn-hangzhou.aliyuncs.com/printerApp/"
+        "url": "http://116.85.5.71:8080/"
       }
     ],
     "asar": false,
