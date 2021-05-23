@@ -3,7 +3,7 @@ const { build, version } = require('../../package.json')
 const config = {
     version: version,  // 版本号
     appName: build.productName, // 鼠标悬停显示
-    isAutoOpen: true, // 开机自启
+    isAutoOpen: false, // 开机自启
     isOnlyOpen: true, // 窗口唯一
     isUseTray: true, // 使用托盘
     isDefineClose: true, // 自定义关闭按钮(最小化禁用关闭事件)
