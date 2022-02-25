@@ -1,4 +1,4 @@
-# print-vue
+# electron-vue-cli
 
 > An electron-vue project
 > 有问题请可联系 QQ 772748611 或 邮箱 jyliyue@qq.com
